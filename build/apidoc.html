@@ -61,12 +61,92 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-csso">module gulp-csso</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-csso.gulp-csso">
+            function <span class="apidocSignatureSpan"></span>gulp-csso
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.gulp-csso" id="apidoc.module.gulp-csso">module gulp-csso</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-csso.gulp-csso" id="apidoc.element.gulp-csso.gulp-csso">
+        function <span class="apidocSignatureSpan"></span>gulp-csso
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gulp-csso = function (options) {
+    var stream = new Transform({ objectMode: true });
+
+    stream._transform = function (file, encoding, cb) {
+        function handleError(error) {
+            if (&#x27;parseError&#x27; in error) {
+                error = processParseError(source, inputFile, error.parseError, error.message);
+            }
+
+            cb(new gutil.PluginError(&#x27;gulp-csso&#x27;, error));
+        }
+
+        if (file.isNull()) {
+            return cb(null, file);
+        }
+
+        if (file.isStream()) {
+            return handleError(&#x27;Streaming not supported&#x27;);
+        }
+
+        var inputFile = file.relative;
+        var source = String(file.contents);
+        var cssoOptions = {
+            filename: inputFile,
+            sourceMap: Boolean(file.sourceMap),
+            restructure: true,
+            debug: false
+        };
+
+        if (options === undefined || typeof options === &#x27;boolean&#x27;) {
+            // for backward capability
+            cssoOptions.restructure = !options;
+        } else if (options) {
+            // extend default csso options
+            for (var name in options) {
+                if (options.hasOwnProperty(name) &#x26;&#x26; name !== &#x27;filename&#x27;) {
+                    cssoOptions[name] = options[name];
+                }
+            }
+        }
+
+        try {
+            var result = csso.minify(source, cssoOptions);
+
+            if (result.map) {
+                applySourceMap(file, result.map.toJSON());
+            } else {
+                file.sourceMap = null;
+            }
+
+            file.contents = new Buffer(result.css);
+            cb(null, file);
+        } catch(error) {
+            handleError(error);
+        }
+    };
+
+    return stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

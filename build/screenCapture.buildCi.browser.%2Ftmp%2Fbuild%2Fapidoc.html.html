@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/ben-eb/gulp-csso"
-
-    >gulp-csso (v3.0.0)</a>
+    <a href="https://github.com/ben-eb/gulp-csso">gulp-csso (v3.0.0)</a>
 </h1>
 <h4>Minify CSS with CSSO.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-csso">module gulp-csso</a><ol>
 
@@ -90,11 +83,11 @@
 
     stream._transform = function (file, encoding, cb) {
         function handleError(error) {
-            if (&#x27;parseError&#x27; in error) {
+            if ('parseError' in error) {
                 error = processParseError(source, inputFile, error.parseError, error.message);
             }
 
-            cb(new gutil.PluginError(&#x27;gulp-csso&#x27;, error));
+            cb(new gutil.PluginError('gulp-csso', error));
         }
 
         if (file.isNull()) {
@@ -102,7 +95,7 @@
         }
 
         if (file.isStream()) {
-            return handleError(&#x27;Streaming not supported&#x27;);
+            return handleError('Streaming not supported');
         }
 
         var inputFile = file.relative;
@@ -114,13 +107,13 @@
             debug: false
         };
 
-        if (options === undefined || typeof options === &#x27;boolean&#x27;) {
+        if (options === undefined || typeof options === 'boolean') {
             // for backward capability
             cssoOptions.restructure = !options;
         } else if (options) {
             // extend default csso options
             for (var name in options) {
-                if (options.hasOwnProperty(name) &#x26;&#x26; name !== &#x27;filename&#x27;) {
+                if (options.hasOwnProperty(name) &amp;&amp; name !== 'filename') {
                     cssoOptions[name] = options[name];
                 }
             }
@@ -156,3 +149,4 @@
     ]
 </div>
 </div>
+</body></html>
