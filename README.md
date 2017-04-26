@@ -1,9 +1,14 @@
-# api documentation for  [gulp-csso (v3.0.0)](https://github.com/ben-eb/gulp-csso)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-csso.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-csso) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-csso.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-csso)
+# npmdoc-gulp-csso
+
+#### basic api documentation for  [gulp-csso (v3.0.0)](https://github.com/ben-eb/gulp-csso)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-csso.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-csso) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-csso.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-csso)
+
 #### Minify CSS with CSSO.
 
-[![NPM](https://nodei.co/npm/gulp-csso.png?downloads=true)](https://www.npmjs.com/package/gulp-csso)
+[![NPM](https://nodei.co/npm/gulp-csso.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-csso)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-csso/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-gulp-csso%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-csso/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-gulp-csso/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-gulp-csso/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-csso/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-csso/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gulp-csso/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Ben Briggs",
-        "email": "beneb.info@gmail.com",
         "url": "http://beneb.info"
     },
     "bugs": {
@@ -54,13 +58,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "beneb",
-            "email": "therealbenbriggs@hotmail.com"
+            "name": "beneb"
         }
     ],
     "name": "gulp-csso",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ben-eb/gulp-csso.git"
@@ -68,19 +70,10 @@
     "scripts": {
         "test": "tape test.js | tap-spec"
     },
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "bin": {}
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module gulp-csso](#apidoc.module.gulp-csso)
-
-
-
-# <a name="apidoc.module.gulp-csso"></a>[module gulp-csso](#apidoc.module.gulp-csso)
 
 
 
